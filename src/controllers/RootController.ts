@@ -18,8 +18,8 @@ export class RootController {
   private async processEvents({ events }: EventsPayload) {
     const promises = [];
 
-    events.forEach(event => {
-      promises.push(...this.dashboardServices.map(service => service.send(event)));
+    events.forEach((event) => {
+      promises.push(...this.dashboardServices.map((service) => service.send(event)));
     });
 
     await Promise.all(promises);

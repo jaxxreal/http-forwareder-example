@@ -23,7 +23,7 @@ export class SpaceshipService implements IDashboardServices {
       if (Array.isArray(value)) {
         result[key] = value.join();
       } else if (isPlainObject(value)) {
-        Object.keys(value).forEach(nestedKey => {
+        Object.keys(value).forEach((nestedKey) => {
           result[`${key}.${nestedKey}`] = value[nestedKey];
         });
       } else {
